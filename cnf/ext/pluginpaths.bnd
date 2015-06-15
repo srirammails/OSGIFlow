@@ -1,0 +1,5 @@
+-pluginpath:  \
+	${plugin-dir}/biz.aQute.repository/biz.aQute.repository.jar,\
+	${plugin-dir}/org.apache.felix.scr.bnd/org.apache.felix.scr.bnd-1.3.0.jar,\
+	${plugin-dir}/bndlib-2.1.0.jar
+	

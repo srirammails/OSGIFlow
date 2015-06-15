@@ -1,0 +1,14 @@
+Bundle-Version: 0.0.0.${tstamp}
+-runfw: org.apache.felix.framework;version='[4.4.1,4.4.1]'
+-runee: JavaSE-1.7
+-resolve: auto
+-buildpath:  \
+	com.vaadin.server,\
+	com.vaadin.shared,\
+	osgi.core;version=4.3,\
+	javax.jdo,\
+	javax.persistence;version=2.1,\
+	osgi.cmpn;version=4.3
+Export-Package:  \
+	com.flow.shellx.api,\
+	com.flow.shellx.proxy
