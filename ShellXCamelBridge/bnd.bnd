@@ -14,7 +14,9 @@
 	org.apache.camel.camel-servlet;version=2.15,\
 	javax.servlet;version=2.5,\
 	org.apache.camel.camel-netty;version=2.15,\
-	org.jboss.netty;version=3.10
+	org.jboss.netty;version=3.10,\
+	com.google.guava;version=18.0,\
+	ShellXAPI;version=latest
 -outputmask: ${@bsn}-${version;===S;${@version}}.jar
 -runproperties: \
     org.osgi.framework.bootdelegation=sun.*,com.sun.*
@@ -47,11 +49,25 @@ Export-Package:  \
 	osgi.identity;filter:='(&(osgi.identity=org.apache.camel.camel-servlet)(version>=2.15.0))',\
 	osgi.identity;filter:='(&(osgi.identity=org.apache.camel.camel-http)(version>=2.15.0))',\
 	osgi.identity;filter:='(&(osgi.identity=javax.servlet)(version=2.5.0.v200910301333))',\
+	osgi.identity;filter:='(&(osgi.identity=org.apache.camel.camel-netty)(version>=2.15.0))',\
+	osgi.identity;filter:='(&(osgi.identity=org.jboss.netty)(version>=3.10.1.Final))',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.runtime)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
-	osgi.identity;filter:='(&(osgi.identity=org.apache.camel.camel-netty)(version>=2.15.0))',\
-	osgi.identity;filter:='(&(osgi.identity=org.jboss.netty)(version>=3.10.1.Final))'
+	osgi.identity;filter:='(&(osgi.identity=com.google.guava)(version>=18.0.0.rc2))',\
+	osgi.identity;filter:='(osgi.identity=com.vaadin.client)',\
+	osgi.identity;filter:='(osgi.identity=com.vaadin.server)',\
+	osgi.identity;filter:='(osgi.identity=com.vaadin.shared)',\
+	osgi.identity;filter:='(osgi.identity=com.vaadin.themes)',\
+	osgi.identity;filter:='(osgi.identity=ShellXAPI)',\
+	osgi.identity;filter:='(osgi.identity=ShellXOSGICommonsBridge)',\
+	osgi.identity;filter:='(osgi.identity=ShellXPersistenceBridge)',\
+	osgi.identity;filter:='(osgi.identity=org.datanucleus.store.rdbms)',\
+	osgi.identity;filter:='(osgi.identity=javax.persistence)',\
+	osgi.identity;filter:='(osgi.identity=com.springsource.com.mysql.jdbc)',\
+	osgi.identity;filter:='(osgi.identity=biz.aQute.bnd.annotation)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.servicemix.bundles.joda-time)',\
+	osgi.identity;filter:='(osgi.identity=org.datanucleus.api.jdo)'
 -runfw: org.apache.felix.framework;version='[4.4.1,4.4.1]'
 -runee: JavaSE-1.7
 -runsystemcapabilities: ${native_capability} 
@@ -59,11 +75,26 @@ Export-Package:  \
 -runvm: -Dorg.osgi.service.http.port=8080
 
 -runbundles:  \
+	ShellXAPI;version=latest,\
+	ShellXOSGICommonsBridge;version=latest,\
+	ShellXPersistenceBridge;version=latest,\
+	ShellXVaadinBridge;version=latest,\
+	biz.aQute.bnd.annotation;version='[2.4.0,2.4.1)',\
 	ch.qos.logback.classic;version='[1.1.2,1.1.3)',\
 	ch.qos.logback.core;version='[1.1.2,1.1.3)',\
+	com.google.guava;version='[18.0.0,18.0.1)',\
+	com.google.gwt.thirdparty.guava;version='[16.0.1,16.0.2)',\
+	com.google.gwt.thirdparty.streamhtmlparser;version='[0.0.10,0.0.11)',\
+	com.springsource.com.mysql.jdbc;version='[5.1.6,5.1.7)',\
 	com.springsource.org.apache.commons.codec;version='[1.6.0,1.6.1)',\
 	com.springsource.org.apache.commons.logging;version='[1.1.1,1.1.2)',\
+	com.vaadin.client;version='[7.3.10,7.3.11)',\
+	com.vaadin.server;version='[7.3.10,7.3.11)',\
+	com.vaadin.shared;version='[7.3.10,7.3.11)',\
+	com.vaadin.themes;version='[7.3.10,7.3.11)',\
 	commons-management;version='[1.0.0,1.0.1)',\
+	javax.jdo;version='[3.1.0,3.1.1)',\
+	javax.persistence;version='[2.1.0,2.1.1)',\
 	javax.servlet;version='[2.5.0,2.5.1)',\
 	joda-time;version='[2.6.0,2.6.1)',\
 	org.apache.camel.camel-core;version='[2.15.0,2.15.1)',\
@@ -82,6 +113,14 @@ Export-Package:  \
 	org.apache.felix.gogo.shell;version='[0.10.0,0.10.1)',\
 	org.apache.felix.scr;version='[1.8.2,1.8.3)',\
 	org.apache.servicemix.bundles.commons-httpclient;version='[3.1.0,3.1.1)',\
+	org.apache.servicemix.bundles.joda-time;version='[2.3.0,2.3.1)',\
+	org.datanucleus;version='[4.0.4,4.0.5)',\
+	org.datanucleus.api.jdo;version='[4.0.4,4.0.5)',\
+	org.datanucleus.api.jpa;version='[4.0.7,4.0.8)',\
+	org.datanucleus.store.rdbms;version='[4.0.5,4.0.6)',\
 	org.jboss.netty;version='[3.10.1,3.10.2)',\
+	org.json;version='[0.0.20080701,0.0.20080702)',\
+	org.jsoup;version='[1.6.3,1.6.4)',\
+	org.w3c.flute;version='[1.3.0,1.3.1)',\
 	osgi.cmpn;version='[5.0.0,5.0.1)',\
 	slf4j.api;version='[1.7.7,1.7.8)'

@@ -9,7 +9,9 @@ import javax.jdo.PersistenceManagerFactory;
 
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.wiring.BundleWiring;
 import org.osgi.service.log.LogService;
+
 
 
 
@@ -117,15 +119,15 @@ public class JDOProviderService implements IPersistenceProvider{
 		Bundle[] bundles = bundleContext.getBundles();
 
 		for (int x = 0; x < bundles.length; x++) {
-			if (bundles[x].getSymbolicName().startsWith(modelBundle)) {
-				try {
-					classloader = bundles[x]
-							.loadClass(modelClassPath).getClassLoader();
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
+			try{
+				if (bundles[x].getHeaders().get("DataNucleus-Model")!=null) {
+					classloader = bundles[x].adapt(BundleWiring.class).getClassLoader();
+					break;
 				}
-				break;
+			}catch(NullPointerException nex){
+				
 			}
+			
 		}
 
 		return classloader;

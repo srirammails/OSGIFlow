@@ -1,4 +1,4 @@
-package com.flow.pjm.model;
+package com.flow.model.pjm;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;

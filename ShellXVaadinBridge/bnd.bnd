@@ -35,10 +35,10 @@ Vaadin-Resources:resource
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.log)',\
 	osgi.identity;filter:='(&(osgi.identity=org.apache.felix.metatype)(version>=1.0.10))',\
 	osgi.identity;filter:='(&(osgi.identity=biz.aQute.bnd.annotation)(version>=2.4.0.201411031537))',\
-	osgi.identity;filter:='(osgi.identity=ShellXAPI)',\
 	osgi.identity;filter:='(&(osgi.identity=osgi.enterprise)(version>=5.0.0.201203141834))',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.webconsole)',\
-	osgi.identity;filter:='(osgi.identity=org.apache.felix.fileinstall)'
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.fileinstall)',\
+	osgi.identity;filter:='(osgi.identity=ShellXAPI)'
 Service-Component:  \
 	*
 -runbundles:  \
@@ -54,8 +54,9 @@ Service-Component:  \
 	com.vaadin.themes;version='[7.3.10,7.3.11)',\
 	javax.jdo;version='[3.1.0,3.1.1)',\
 	org.amdatu.persistence2_1;version='[1.0.0,1.0.1)',\
-	org.apache.felix.configadmin;version='[1.8.2,1.8.3)',\
-	org.apache.felix.fileinstall;version='[3.4.0,3.4.1)',\
+	org.apache.camel.camel-core;version='[2.15.0,2.15.1)',\
+	org.apache.felix.configadmin;version='[1.8.4,1.8.5)',\
+	org.apache.felix.fileinstall;version='[3.5.0,3.5.1)',\
 	org.apache.felix.http.api;version='[2.3.2,2.3.3)',\
 	org.apache.felix.http.jetty;version='[2.3.0,2.3.1)',\
 	org.apache.felix.http.servlet-api;version='[1.0.0,1.0.1)',\

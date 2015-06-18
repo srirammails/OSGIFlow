@@ -8,8 +8,8 @@ import javax.jdo.Transaction;
 import aQute.bnd.annotation.component.Component;
 import aQute.bnd.annotation.component.Reference;
 
-import com.flow.pjm.model.Registration;
-import com.flow.pjm.model.Tutor;
+import com.flow.model.pjm.Registration;
+import com.flow.model.pjm.Tutor;
 import com.flow.shell.component.BaseShellComponent;
 import com.flow.shell.component.UploadReceiver;
 import com.flow.shellx.api.IPersistenceProvider;

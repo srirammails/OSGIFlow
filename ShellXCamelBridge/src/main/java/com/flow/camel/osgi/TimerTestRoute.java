@@ -38,3 +38,23 @@ public class TimerTestRoute extends  RouteBuilder {
 		
 	}
 }
+
+
+
+//from("netty-http:http://localhost:80/")
+//.process(new Processor() {
+//	@Override
+//	public void process(Exchange exch) throws Exception {
+//		exch.getOut().setBody("test port 80 ");
+//	}
+//})
+//.end();
+//
+//from("netty-http:http://127.0.0.1:8080/test")
+//.process(new Processor() {
+//	@Override
+//	public void process(Exchange exch) throws Exception {
+//		exch.getOut().setBody("test port also 80");
+//	}
+//})
+//.end();

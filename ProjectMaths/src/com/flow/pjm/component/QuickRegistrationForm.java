@@ -9,8 +9,8 @@ import aQute.bnd.annotation.component.Component;
 import aQute.bnd.annotation.component.Modified;
 import aQute.bnd.annotation.component.Reference;
 
-import com.flow.pjm.model.Contact;
-import com.flow.pjm.model.Registration;
+import com.flow.model.pjm.Contact;
+import com.flow.model.pjm.Registration;
 import com.flow.shell.component.BaseShellComponent;
 import com.flow.shellx.api.IPersistenceProvider;
 import com.flow.shellx.api.IShellComponent;

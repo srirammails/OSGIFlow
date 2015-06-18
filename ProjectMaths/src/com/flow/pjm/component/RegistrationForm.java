@@ -1,6 +1,6 @@
 package com.flow.pjm.component;
 
-import com.flow.pjm.model.Registration;
+import com.flow.model.pjm.Registration;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.data.util.BeanItem;

@@ -216,7 +216,7 @@ public class HttpServerChannelHandler extends ServerChannelHandler {
 //        if(consumer.getContext().getRegistry().lookupByNameAndType("servlet", Servlet.class)!=null){
 //        	
 //        	Servlet vaadinServlet = consumer.getContext().getRegistry().lookupByNameAndType("servlet", Servlet.class);
-//        	vaadinServlet.service(HttpServletRequest req,);
+//        	//vaadinServlet.service(request,new DefaultHttpResponse(HTTP_1_1, OK));
 //        	
 //        }
         // let Camel process this message

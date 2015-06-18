@@ -22,23 +22,16 @@ testsrc: src/main/test
 -runee: JavaSE-1.7
 -runproperties: \
     org.osgi.framework.bootdelegation=sun.*,com.sun.*
-Export-Package:  \
-	com.flow.shell.api,\
-	com.flow.shell.base,\
-	com.flow.shell.data,\
-	com.flow.shell.api.model
 Service-Component:  \
 	*
 -runvm: -Dosgi.console
 -resolve: auto
 Import-Package:  \
 	*
-Private-Package:  \
-	com.flow.vaadin.osgi.servlet,\
-	com.flow.vaadin.osgi
 
 -runbundles:  \
 	ShellXAPI;version=latest,\
+	ShellXOSGICommonsBridge;version=latest,\
 	ShellXVaadinBridge;version=latest,\
 	biz.aQute.bnd.annotation;version='[2.4.0,2.4.1)',\
 	ch.qos.logback.classic;version='[1.1.2,1.1.3)',\
@@ -51,14 +44,20 @@ Private-Package:  \
 	com.vaadin.themes;version='[7.3.10,7.3.11)',\
 	javax.jdo;version='[3.1.0,3.1.1)',\
 	joda-time;version='[2.6.0,2.6.1)',\
+	org.amdatu.persistence2_1;version='[1.0.0,1.0.1)',\
+	org.apache.camel.camel-core;version='[2.15.0,2.15.1)',\
+	org.apache.felix.configadmin;version='[1.8.4,1.8.5)',\
 	org.apache.felix.http.api;version='[2.3.2,2.3.3)',\
 	org.apache.felix.http.jetty;version='[2.3.0,2.3.1)',\
 	org.apache.felix.http.servlet-api;version='[1.0.0,1.0.1)',\
 	org.apache.felix.scr;version='[1.8.2,1.8.3)',\
+	org.apache.geronimo.specs.geronimo-jta_1.1_spec;version='[1.1.1,1.1.2)',\
 	org.json;version='[0.0.20080701,0.0.20080702)',\
 	org.jsoup;version='[1.6.3,1.6.4)',\
+	org.ops4j.pax.logging.pax-logging-api;version='[1.8.1,1.8.2)',\
 	org.w3c.flute;version='[1.3.0,1.3.1)',\
 	osgi.cmpn;version='[5.0.0,5.0.1)',\
+	osgi.enterprise;version='[4.2.0,4.2.1)',\
 	slf4j.api;version='[1.7.7,1.7.8)'
 -runrequires:  \
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.http.api)',\
@@ -73,4 +72,10 @@ Private-Package:  \
 	osgi.identity;filter:='(osgi.identity=com.vaadin.themes)',\
 	osgi.identity;filter:='(osgi.identity=org.json)',\
 	osgi.identity;filter:='(osgi.identity=org.jsoup)',\
-	osgi.identity;filter:='(osgi.identity=ShellXVaadinBridge)'
+	osgi.identity;filter:='(osgi.identity=ShellXVaadinBridge)',\
+	osgi.identity;filter:='(osgi.identity=ShellXAPI)',\
+	osgi.identity;filter:='(osgi.identity=ShellXOSGICommonsBridge)',\
+	osgi.identity;filter:='(&(osgi.identity=org.apache.felix.configadmin)(version>=1.8.4))'
+Export-Package:  \
+	com.flow.shellx.api,\
+	com.flow.shellx.proxy

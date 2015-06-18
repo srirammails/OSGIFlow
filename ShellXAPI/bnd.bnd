@@ -7,8 +7,20 @@ Bundle-Version: 0.0.0.${tstamp}
 	com.vaadin.shared,\
 	osgi.core;version=4.3,\
 	javax.jdo,\
-	javax.persistence;version=2.1,\
-	osgi.cmpn;version=4.3
+	osgi.cmpn;version=4.3,\
+	org.apache.camel.camel-core;version=2.15,\
+	org.apache.camel.camel-core-osgi;version=2.15,\
+	javax.persistence;version=2.1
 Export-Package:  \
 	com.flow.shellx.api,\
 	com.flow.shellx.proxy
+-runrequires:  \
+	osgi.identity;filter:='(osgi.identity=com.vaadin.client)',\
+	osgi.identity;filter:='(osgi.identity=com.vaadin.client-compiled)',\
+	osgi.identity;filter:='(osgi.identity=com.vaadin.themes)',\
+	osgi.identity;filter:='(&(osgi.identity=javax.persistence)(version=2.1.0.v201304241213))'
+-runbundles:  \
+	com.vaadin.client;version='[7.3.10,7.3.11)',\
+	com.vaadin.client-compiled;version='[7.3.10,7.3.11)',\
+	com.vaadin.themes;version='[7.3.10,7.3.11)',\
+	javax.persistence;version='[2.1.0,2.1.1)'
